@@ -1,3 +1,9 @@
+body {
+  background-image: url('../images/background.webp');
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
     text-align: center;
     margin-top: 50px;
