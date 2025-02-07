@@ -2,14 +2,3 @@
 
 ## Overview
 The Fasting Tracker is a simple web application designed to help users track their intermittent fasting periods.
-
-## Project Structure
-```
-├── src
-│   ├── css
-│   │   └── styles.css
-│   ├── js
-│   │   └── app.js
-│   └── index.html
-└── README.md
-```
