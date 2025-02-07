@@ -5,7 +5,6 @@ The Fasting Tracker is a simple web application designed to help users track the
 
 ## Project Structure
 ```
-fasting-tracker
 ├── src
 │   ├── css
 │   │   └── styles.css
