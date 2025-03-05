@@ -1,13 +1,12 @@
 .container {
     text-align: center;
-    padding: 50px;
+    padding: 8px;
     margin: auto;
-    max-width: 1440px;
-    height: 85vh;
-    max-height: 1024px ;
+    height: 100vh;
     background-image: url('../images/background.webp');
     background-size: cover;
     background-position: center;
+    background-repeat: repeat;
 }
 
 section {
