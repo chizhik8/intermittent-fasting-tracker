@@ -8,14 +8,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-avocado-96.png">
 </head>
 <body>
-    <main>
-        <div class="container">
+    <main class="container">
+        <section>
             <h1>Intermittent Fasting Tracker</h1>
-            <div id="timer">00:00:00</div>
-            <button id="startBtn">Start</button>
-            <button id="stopBtn">End</button>
-            <button id="resetBtn">Reset</button>
-        </div>
+            <div class="timer">
+                <div class="timer-inner">
+                    <p id="timer">00:00:00</p>
+                    <div class="time-left">
+                        <p id="time-left">00:00</p>
+                        <span>left</span>
+                    </div>
+                </div>
+            </div>
+            <div class="start-date">
+                <label for="start-date">Set fasting start time:</label>
+                <input type="datetime-local" id="start-date" name="start-date">
+            </div>
+            <div class="duration">
+                <label for="duration">Duration (hours):</label>
+                <input type="number" id="duration" name="duration" value="12" min="4" max="142">
+            </div>
+            <div class="end-date">
+                <label for="end-date">End fasting at:</label>
+                <input disabled type="datetime-local" id="end-date" name="end-date">
+            </div>
+            <button type="button" id="startBtn">Start</button>
+            <button type="button" id="stopBtn">End</button>
+            <button type="reset" id="resetBtn">Reset</button>
+        </section>
     </main>
 
     <script src="js/timer.js"></script>
