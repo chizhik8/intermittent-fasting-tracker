@@ -1,6 +1,6 @@
 const startTimeStorage = parseInt(localStorage.getItem('startTime')) || 0;
 const elapsedTimeStorage = parseInt(localStorage.getItem('elapsedTime')) || 0;
-const durationStorage = parseInt(localStorage.getItem('duration')) || 1;
+const durationStorage = parseInt(localStorage.getItem('duration')) || 12;
 const timeLeftsStorage = parseInt(localStorage.getItem('timeLeft')) || 0;
 
 const timerDisplay = document.getElementById('timer');
