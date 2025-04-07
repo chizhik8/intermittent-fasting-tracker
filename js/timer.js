@@ -44,6 +44,7 @@ const resetFasting = () => {
     localStorage.clear();
     displayTime(0);
     displayTimeLeft(0);
+    window.location.reload();
     startBtn.disabled = false;
     duration.disabled = false;
     stopBtn.disabled = false;

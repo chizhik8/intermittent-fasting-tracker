@@ -1,4 +1,9 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .container {
+    display: flex;
     text-align: center;
     padding: 8px;
     margin: auto;
@@ -46,7 +51,7 @@ section {
 }
 
 #timer {
-  font-size: 40px;
+  font-size: 34px;
   margin: 0;
 }
 
@@ -168,4 +173,29 @@ button:disabled {
 .end-date input:disabled {
   opacity: 0.8;
   cursor: not-allowed;
+}
+
+.stages-container {
+  display: flex;
+}
+
+.level {
+  width: 16px;
+  background-color: #F5F8FE;
+  border-radius: 6px;
+}
+
+ul {
+  width: 100%;
+  list-style-type: upper-roman;
+  margin: 0;
+  text-align: left;
+}
+
+li {
+  width: 100%;
+}
+
+li h3 {
+  margin: 0;
 }
