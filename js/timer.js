@@ -53,16 +53,42 @@ const resetFasting = () => {
     duration.value = 12;
 };
 
+const stages = [
+    { name: "Blood sugar level rises", start: 0, end: 2 },
+    { name: "Blood sugar level decreases", start: 2, end: 5 },
+    { name: "Blood sugar level normalizes", start: 5, end: 9.5 },
+    { name: "Fat burning begins (Ketosis)", start: 9.5, end: 15.5 },
+    { name: "Fat burning intensifies", start: 15.5, end: 21.5 },
+    { name: "Autophagy", start: 21.5, end: 33.5 }
+];
+
+const stageElements = document.querySelectorAll('#stages-section ul li');
+
+const updateStages = (elapsedHours) => {
+    stageElements.forEach((stageEl, index) => {
+        const stage = stages[index];
+        if (elapsedHours >= stage.end) {
+            stageEl.className = 'stage-completed';
+        } else if (elapsedHours >= stage.start && elapsedHours < stage.end) {
+            stageEl.className = 'stage-in-progress';
+        } else {
+            stageEl.className = 'stage-not-started';
+        }
+    });
+};
+
 const updateTimer = () => {
     const startTime = parseInt(localStorage.getItem('startTime'));
     if (startTime <= Date.now()) {
         const elapsedTime = Date.now() - startTime;
+        const elapsedHours = elapsedTime / (1000 * 60 * 60);
         const timeLeftMs = addHoursToDate(startTime) - Date.now();
         displayTime(elapsedTime);
         displayTimeLeft(timeLeftMs);
+        updateStages(elapsedHours);
 
         if (timeLeftMs < 0) {
-            timeLeftsMessage.textContent = 'above';
+            timeLeftsMessage.textContent = 'keep it up!';
         }
     }
 };
@@ -119,8 +145,10 @@ if (durationStorage) {
 }
 
 if (elapsedTimeStorage) {
+    const elapsedHours = elapsedTimeStorage / (1000 * 60 * 60);
     displayTime(elapsedTimeStorage);
     displayTimeLeft(timeLeftsStorage);
+    updateStages(elapsedHours);
     startBtn.disabled = true;
     stopBtn.disabled = true;
     duration.disabled = true;

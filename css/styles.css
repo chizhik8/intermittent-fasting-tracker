@@ -68,8 +68,12 @@ section {
 
 .time-left {
   display: flex;
+  justify-content: center;
   gap: 4px;
   font-size: 16px;
+  color: #FECB57;
+  font-style: italic;
+  font-weight: bold;
 }
 
 #time-left {
@@ -97,10 +101,17 @@ button:disabled {
   opacity: 0.8;
   cursor: not-allowed;
 }
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px auto;
+  width: min-content;
+}
 
 .duration {
-  width: fit-content;
-  margin: 20px auto;
+  width: 100%;
   padding: 10px 20px;
   background-color: #F5F8FE;
   border-radius: 6px;
@@ -129,8 +140,7 @@ button:disabled {
 }
 
 .start-date {
-  width: fit-content;
-  margin: 20px auto;
+  width: 100%;
   padding: 10px 20px;
   background-color: #F5F8FE;
   border-radius: 6px;
@@ -158,8 +168,7 @@ button:disabled {
 }
 
 .end-date {
-  width: fit-content;
-  margin: 20px auto;
+  width: 100%;
   padding: 10px 20px;
   background-color: #F5F8FE;
   border-radius: 6px;
@@ -211,6 +220,18 @@ li h3 {
   margin: 0;
   font-size: 16px;
   color: #FC9A2F;
+}
+
+li.stage-not-started h3 {
+  color: #FECB57;
+}
+
+li.stage-in-progress h3 {
+  color: #95D9D9;
+}
+
+li.stage-completed h3 {
+  color: #d3d3d3;
 }
 
 @media (max-width: 992px) {

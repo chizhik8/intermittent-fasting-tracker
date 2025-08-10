@@ -14,23 +14,25 @@
             <div class="timer">
                 <div class="timer-inner">
                     <p id="timer">00:00:00</p>
-                    <div class="time-left">
-                        <p id="time-left">00:00</p>
-                        <span id="time-left-message">left</span>
-                    </div>
                 </div>
             </div>
-            <div class="start-date">
-                <label for="start-date">Set fasting start time:</label>
-                <input type="datetime-local" id="start-date" name="start-date">
+            <div class="time-left">
+                <p id="time-left">00:00</p>
+                <span id="time-left-message">keep pushing!</span>
             </div>
-            <div class="duration">
-                <label for="duration">Duration (hours):</label>
-                <input type="number" id="duration" name="duration" value="12" min="1" max="142">
-            </div>
-            <div class="end-date">
-                <label for="end-date">End fasting at:</label>
-                <input disabled type="datetime-local" id="end-date" name="end-date">
+            <div class="controls">
+                <div class="start-date">
+                    <label for="start-date">Set fasting start time:</label>
+                    <input type="datetime-local" id="start-date" name="start-date">
+                </div>
+                <div class="duration">
+                    <label for="duration">Duration (hours):</label>
+                    <input type="number" id="duration" name="duration" value="12" min="1" max="142">
+                </div>
+                <div class="end-date">
+                    <label for="end-date">End fasting at:</label>
+                    <input disabled type="datetime-local" id="end-date" name="end-date">
+                </div>
             </div>
             <button type="button" id="startBtn">Start</button>
             <button type="button" id="stopBtn">End</button>
