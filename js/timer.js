@@ -59,7 +59,11 @@ const stages = [
     { name: "Blood sugar level normalizes", start: 5, end: 9.5 },
     { name: "Fat burning begins (Ketosis)", start: 9.5, end: 15.5 },
     { name: "Fat burning intensifies", start: 15.5, end: 21.5 },
-    { name: "Autophagy", start: 21.5, end: 33.5 }
+    { name: "Autophagy", start: 21.5, end: 33.5 },
+    { name: "Hunger subsides", start: 33.5, end: 45.5 },
+    { name: "Growth hormone boost", start: 45.5, end: 51.5 },
+    { name: "Insulin level reduction", start: 51.5, end: 69.5 },
+    { name: "Immune cell regeneration", start: 69.5, end: 141.5 }
 ];
 
 const stageElements = document.querySelectorAll('#stages-section ul li');
@@ -111,9 +115,15 @@ const displayTime = (ms) => {
 };
 
 const displayTimeLeft = (ms) => {
+    const timeLeftContainer = timeLefts.parentElement;
     const hours = Math.floor(ms / (1000 * 60 * 60)) < 0 ? Math.floor(ms / (1000 * 60 * 60))*-1 : Math.floor(ms / (1000 * 60 * 60));
     const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60)) < 0 ? Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))*-1 : Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-    timeLefts.textContent = `${padNumber(hours)}:${padNumber(minutes)}`;
+    if (hours === 0 && minutes === 0) {
+        timeLeftContainer.style.display = 'none';
+    } else {
+        timeLeftContainer.style.display = 'flex';
+        timeLefts.textContent = `${padNumber(hours)}:${padNumber(minutes)}`;
+    }
 };
 
 const formatDateTime = (timestamp) => {
