@@ -115,15 +115,10 @@ const displayTime = (ms) => {
 };
 
 const displayTimeLeft = (ms) => {
-    const timeLeftContainer = timeLefts.parentElement;
     const hours = Math.floor(ms / (1000 * 60 * 60)) < 0 ? Math.floor(ms / (1000 * 60 * 60))*-1 : Math.floor(ms / (1000 * 60 * 60));
     const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60)) < 0 ? Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))*-1 : Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-    if (hours === 0 && minutes === 0) {
-        timeLeftContainer.style.display = 'none';
-    } else {
-        timeLeftContainer.style.display = 'flex';
-        timeLefts.textContent = `${padNumber(hours)}:${padNumber(minutes)}`;
-    }
+    timeLefts.style.display = 'flex';
+    timeLefts.textContent = `${padNumber(hours)}:${padNumber(minutes)}`;
 };
 
 const formatDateTime = (timestamp) => {

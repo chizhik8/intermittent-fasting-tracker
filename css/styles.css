@@ -67,7 +67,7 @@ section {
 }
 
 .time-left {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 4px;
   font-size: 16px;
