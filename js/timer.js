@@ -16,6 +16,7 @@ const endDateInput = document.getElementById('end-date');
 let timerInterval;
 
 const startFasting = () => {
+    timeLefts.style.display = 'flex';
     const startDate = new Date(startDateInput.value);
     if (!startTimeStorage) {
         localStorage.setItem('startTime', startDate.getTime());
@@ -49,6 +50,7 @@ const resetFasting = () => {
     duration.disabled = false;
     stopBtn.disabled = false;
     startDateInput.disabled = false;
+    timeLefts.style.display = 'none';
     startDateInput.value = formatDateTime(Date.now());
     duration.value = 12;
 };
@@ -117,7 +119,6 @@ const displayTime = (ms) => {
 const displayTimeLeft = (ms) => {
     const hours = Math.floor(ms / (1000 * 60 * 60)) < 0 ? Math.floor(ms / (1000 * 60 * 60))*-1 : Math.floor(ms / (1000 * 60 * 60));
     const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60)) < 0 ? Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))*-1 : Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-    timeLefts.style.display = 'flex';
     timeLefts.textContent = `${padNumber(hours)}:${padNumber(minutes)}`;
 };
 
