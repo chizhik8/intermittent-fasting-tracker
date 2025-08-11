@@ -1,10 +1,11 @@
 const startTimeStorage = parseInt(localStorage.getItem('startTime')) || 0;
 const elapsedTimeStorage = parseInt(localStorage.getItem('elapsedTime')) || 0;
-const durationStorage = parseInt(localStorage.getItem('duration')) || 12;
+const durationStorage = parseInt(localStorage.getItem('duration')) || 16;
 const timeLeftsStorage = parseInt(localStorage.getItem('timeLeft')) || 0;
 
 const timerDisplay = document.getElementById('timer');
 const timeLefts = document.getElementById('time-left');
+const timeLeftBlock = document.querySelector('.time-left');
 const timeLeftsMessage = document.getElementById('time-left-message');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
@@ -16,7 +17,7 @@ const endDateInput = document.getElementById('end-date');
 let timerInterval;
 
 const startFasting = () => {
-    timeLefts.style.display = 'flex';
+    timeLeftBlock.style.display = 'flex';
     const startDate = new Date(startDateInput.value);
     if (!startTimeStorage) {
         localStorage.setItem('startTime', startDate.getTime());
@@ -50,9 +51,9 @@ const resetFasting = () => {
     duration.disabled = false;
     stopBtn.disabled = false;
     startDateInput.disabled = false;
-    timeLefts.style.display = 'none';
+    timeLeftBlock.style.display = 'none';
     startDateInput.value = formatDateTime(Date.now());
-    duration.value = 12;
+    duration.value = 16;
 };
 
 const stages = [
