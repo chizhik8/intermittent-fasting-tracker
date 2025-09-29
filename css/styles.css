@@ -294,3 +294,59 @@ li.stage-completed h3 {
         font-size: 15px;
     }
 }
+
+/* Calendar Styles */
+table {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #F5F8FE;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+}
+
+caption {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px;
+  color: #95D9D9;
+}
+
+tr {
+  text-align: center;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.calendar-cell {
+  padding: 2px;
+  width: 36px;
+  max-width: 36px;
+  text-align: center;
+}
+.calendar-day {
+  font-size: 12px;
+}
+.calendar-input {
+  width: 32px;
+  font-size: 12px;
+  padding: 2px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .calendar-cell {
+    width: 32px;
+    max-width: 32px;
+    font-size: 11px;
+    padding: 1px;
+  }
+  .calendar-input {
+    width: 28px;
+    font-size: 11px;
+    padding: 1px;
+  }
+  .calendar-day {
+    font-size: 11px;
+  }
+}
+/* End of Calendar Styles */
