@@ -94,8 +94,8 @@ const updateTimer = () => {
         displayTimeLeft(timeLeftMs);
         updateStages(elapsedHours);
 
-        if (timeLeftMs < 0) {
-            timeLeftsMessage.textContent = 'keep it up!';
+        if (timeLeftMs <= 0) {
+            timeLeftBlock.style.display = 'none';
         }
     }
 };
