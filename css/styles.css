@@ -125,6 +125,7 @@ button:disabled {
   padding: 10px;
   width: 40px;
   text-align: center;
+  font-size: 14px;
 }
 
 .duration input:focus, 
@@ -153,6 +154,7 @@ button:disabled {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
   padding: 10px;
   text-align: center;
+  font-size: 14px;
 }
 
 .start-date input:focus, 
@@ -181,6 +183,7 @@ button:disabled {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
   padding: 10px;
   text-align: center;
+  font-size: 14px;
 }
 
 .end-date input:focus, 
@@ -238,6 +241,7 @@ li.stage-completed h3 {
     .container {
         flex-direction: column;
         align-items: center;
+        padding: 20px 10px;
     }
 
     #tracker-section, #stages-section {
@@ -331,6 +335,7 @@ tr {
   font-size: 12px;
   padding: 2px;
   text-align: center;
+  font-size: 14px;
 }
 
 @media (max-width: 480px) {
